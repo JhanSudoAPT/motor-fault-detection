@@ -1,0 +1,62 @@
+# Project Configuration
+project:
+  name: "Motor Fault Detection"
+  seed: 42
+  version: "1.0"
+
+# Path Configuration
+paths:
+  input_dir: "data/input"
+  processed_dir: "data/processed"
+  output_dir: "data/output"
+  models_dir: "models"
+
+# Signal Processing Parameters
+signal_processing:
+  sampling_rate: 3200
+  segments_per_file: 200
+  fft_size: 128
+  overlap: 0.5
+  use_welch: true
+  epsilon: 1e-12
+
+# Noise Parameters
+noise:
+  snr_levels: [20, 15, 10, 5, 0, -5]
+  random_seed: 42
+
+# Model Training Parameters
+training:
+  test_size: 0.15
+  val_size: 0.1
+  epochs: 50
+  batch_size: 32
+  learning_rate: 0.001
+
+# Feature Configuration
+features:
+  expected:
+    - meanv
+    - smr
+    - fft_energy_low
+    - fft_rmsf
+    - fft_rvf
+    - fft_entropy
+    - fft_energy_high
+    - fft_std
+    - fft_fc
+    - n5m
+    - sd
+    - rms
+    - var
+    - kurto
+    - peak
+    - n6m
+    - trough
+    - form
+    - fft_peak
+    - impulse
+    - entropy
+    - crest
+    - skewn
+    - fft_mean
