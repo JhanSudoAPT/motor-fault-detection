@@ -9,7 +9,7 @@
 #define OVERLAP 0.5
 #define EPS 1e-12
 
-// Arrays for FFT (using float for optimization)
+// Arrays for FFT 
 float vReal[N];
 float vImag[N];
 float inputSignal[N];
@@ -21,7 +21,7 @@ ArduinoFFT<float> FFT(vReal, vImag, N, SAMPLING_FREQ);
 float calculateMoment(float* data, int size, float mean, int order) {
     float moment = 0.0;
     for (int i = 0; i < size; i++) {
-        moment += powf(fabsf(data[i] - mean), order);  // Absolute value as in Python
+        moment += powf(fabsf(data[i] - mean), order);  
     }
     return moment / size;
 }
